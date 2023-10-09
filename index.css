@@ -1,0 +1,24 @@
+.board {
+    display: grid;
+    grid-template-columns: repeat(10, 40px);
+    gap: 2px;
+    width: 420px;
+    margin: 0 auto;
+}
+
+.cell {
+    width: 40px;
+    height: 40px;
+    background-color: #3498db;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.cell.clicked {
+    background-color: #e74c3c;
+    color: #fff;
+}
