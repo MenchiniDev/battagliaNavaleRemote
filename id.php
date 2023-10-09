@@ -21,6 +21,16 @@ if ($conn->connect_error) {
     echo "Connessione al database riuscita!";
 }
 
+$query = "INSERT INTO lobby (id, false) VALUES (:numero)";
+$stmt = $conn->prepare($query);
+$stmt->bind_param(":numero", $numeroDiRitorno);
+
+if ($stmt->execute()) {
+    echo "Dati inseriti con successo.";
+} else {
+    echo "Errore durante l'inserimento dei dati: " . $conn->error;
+}
+
 // Crea un array con il numero di ritorno
 $risposta = array(
     "numero" => $numeroDiRitorno
